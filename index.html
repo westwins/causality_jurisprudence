@@ -7,12 +7,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Visualization & Content Choices:
-        - Report Sections (1-8): Goal: Inform/Organize. Viz: HTML text. Interaction: Scroll navigation. Justification: Standard.
+        - Report Sections (1-8, 11): Goal: Inform/Organize. Viz: HTML text. Interaction: Scroll navigation. Justification: Standard.
         - Tables (1, 2, 3): Goal: Compare/Inform. Viz: HTML tables. Interaction: Static. Justification: Clear data display.
         - Ladder of Causation: Goal: Explain Hierarchy. Viz: HTML/CSS stepped diagram. Interaction: Static. Justification: Visual hierarchy.
         - Key Concepts (SCM, DAG, etc.): Goal: Define. Viz: Tooltips. Interaction: Hover. Justification: Quick info.
         - Interactive Explorer: Goal: Explore/Relate. Viz: JS dropdown updating HTML/CSS. Interaction: User selection. Justification: Dynamic exploration.
-        - Infographic Section: Goal: Supplement/Visualize. Viz: Iframe embedding external HTML. Interaction: External page's own interactions. Justification: Integrate rich visual summary.
+        - Infographic Section (9): Goal: Supplement/Visualize. Viz: Iframe embedding external HTML. Interaction: External page's own. Justification: Integrate rich visual summary.
+        - Exam Analysis Section (10): Goal: Supplement/Analyze. Viz: Iframe embedding external HTML ('exam_analysis1.html'). Interaction: External page's own. Justification: Integrate detailed analysis.
         - Library/Method: Vanilla JS, Tailwind, HTML/CSS. Chart.js not used (no quantitative data).
     -->
     <style>
@@ -56,6 +57,7 @@
             <a href="#interactive-explorer-section" class="nav-link px-2 py-1 text-xs sm:text-sm font-medium text-gray-700">대화형 탐색기</a>
             <a href="#challenges" class="nav-link px-2 py-1 text-xs sm:text-sm font-medium text-gray-700">도전 과제</a>
             <a href="#infographic" class="nav-link px-2 py-1 text-xs sm:text-sm font-medium text-gray-700">인포그래픽</a>
+            <a href="#exam-analysis" class="nav-link px-2 py-1 text-xs sm:text-sm font-medium text-gray-700">시험 분석</a>
             <a href="#conclusion" class="nav-link px-2 py-1 text-xs sm:text-sm font-medium text-gray-700">결론</a>
         </div>
     </nav>
@@ -336,7 +338,7 @@
         </section>
         
         <section id="interactive-explorer-section" class="content-section bg-white p-6 rounded-lg shadow-md">
-            <h2 class="text-2xl font-semibold mb-4">대화형 탐색기: 법률 개념과 펄의 인과론 연결</h2>
+            <h2 class="text-2xl font-semibold mb-4">7. 대화형 탐색기: 법률 개념과 펄의 인과론 연결</h2>
             <p class="section-intro">이 대화형 탐색기를 통해 주요 법률 개념이 펄의 인과 프레임워크와 어떻게 연결되는지 시각적으로 확인할 수 있습니다. 아래 드롭다운 메뉴에서 법률 개념을 선택하면 해당 설명과 간단한 도식 예시가 나타납니다. 이를 통해 보고서의 핵심적인 연결고리를 직접 탐색하고 이해할 수 있습니다.</p>
             
             <div class="interactive-explorer mb-6 p-4 border rounded-md bg-gray-50">
@@ -358,7 +360,7 @@
 
 
         <section id="challenges" class="content-section bg-white p-6 rounded-lg shadow-md">
-            <h2 class="text-2xl font-semibold mb-4">7. 도전 과제, 한계 및 향후 방향</h2>
+            <h2 class="text-2xl font-semibold mb-4">8. 도전 과제, 한계 및 향후 방향</h2>
             <p class="section-intro">펄의 인과 추론 프레임워크를 법률 CoT의 기초로 활용하는 것은 상당한 잠재력을 지니지만, 여러 도전 과제와 한계에 직면합니다. 이 섹션에서는 심층적 규범성 포착의 어려움, 법적 모호성, 복잡한 법률 지식 형식화 등의 문제점과 향후 연구 방향(하이브리드 모델, 대화형 모델 개선 등)을 논의합니다.</p>
 
             <h3 class="text-xl font-semibold mb-3 text-[#0056b3]">펄 프레임워크의 한계 및 법률 지식 형식화</h3>
@@ -391,16 +393,25 @@
         </section>
 
         <section id="infographic" class="content-section bg-white p-6 rounded-lg shadow-md">
-            <h2 class="text-2xl font-semibold mb-4">8. 인포그래픽: 법률 인과론 시각화</h2>
+            <h2 class="text-2xl font-semibold mb-4">9. 인포그래픽: 법률 인과론 시각화</h2>
             <p class="section-intro">이 섹션에서는 보고서의 핵심 개념과 법률 추론 및 인과론 간의 관계를 시각적으로 요약한 인포그래픽을 제공합니다. 아래 프레임에서 외부 페이지를 로드하여 내용을 확인하실 수 있습니다.</p>
             <div class="iframe-container mt-4 rounded-lg shadow-inner overflow-hidden">
-                <iframe src="infographic.html" title="법률 인과론 인포그래픽"></iframe>
+                <iframe src="https://westwins.github.io/causality_jurisprudence/infographic.html" title="법률 인과론 인포그래픽"></iframe>
             </div>
              <p class="mt-4 text-sm text-gray-600">위 인포그래픽은 <a href="https://westwins.github.io/causality_jurisprudence/infographic.html" target="_blank" rel="noopener noreferrer" class="text-[#007BFF] hover:underline">이곳</a>에서 직접 확인하실 수도 있습니다.</p>
         </section>
 
+        <section id="exam-analysis" class="content-section bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold mb-4">10. 시험 분석: 관련 내용 시각화</h2>
+            <p class="section-intro">이 섹션에서는 관련 시험 분석 내용을 외부 페이지를 통해 제공합니다. 아래 프레임에서 해당 내용을 확인하실 수 있습니다.</p>
+            <div class="iframe-container mt-4 rounded-lg shadow-inner overflow-hidden">
+                <iframe src="exam_analysis1.html" title="시험 분석 내용"></iframe>
+            </div>
+             <p class="mt-4 text-sm text-gray-600">위 분석 내용은 <a href="exam_analysis1.html" target="_blank" rel="noopener noreferrer" class="text-[#007BFF] hover:underline">여기서</a> 직접 확인하실 수도 있습니다.</p>
+        </section>
+
         <section id="conclusion" class="content-section bg-white p-6 rounded-lg shadow-md">
-            <h2 class="text-2xl font-semibold mb-4">9. 결론: 법률 분야의 인과적이고 설명 가능한 AI를 향하여</h2>
+            <h2 class="text-2xl font-semibold mb-4">11. 결론: 법률 분야의 인과적이고 설명 가능한 AI를 향하여</h2>
             <p class="section-intro">본 보고서는 주디아 펄의 인과 추론 프레임워크가 법률 AI에서 더욱 강력하고 설명 가능하며 인과적으로 근거 있는 사고 연쇄(CoT)를 위한 기초로서 상당한 잠재력을 지니고 있음을 탐색했습니다. 법률 추론의 고유한 특징은 특화된 법률 CoT를 필요로 하며, 이의 개발은 여러 도전 과제를 안고 있지만, 법률 실무, 교육, 나아가 법리학적 이해까지 변화시킬 수 있는 중요한 연구 방향입니다.</p>
             <p class="mb-4">펄의 프레임워크는 사실적 인과관계와 반사실적 사고 모델링에 강력하지만, 법의 해석학적 및 규범적 차원 통합은 핵심 과제로 남아 있으며, 하이브리드 접근 방식이 필요할 가능성이 높습니다.</p>
             <div class="key-takeaway p-4 rounded-md my-4">
@@ -428,8 +439,6 @@
                 
                 navLinks.forEach((link) => link.classList.remove('active'));
                 
-                // Find the corresponding nav link. This assumes navLinks order matches sections order.
-                // A more robust way would be to match href with section id.
                 const activeSectionId = sections[index] ? sections[index].id : null;
                 if (activeSectionId) {
                     const activeNavLink = document.querySelector(`.nav-link[href="#${activeSectionId}"]`);
@@ -440,8 +449,8 @@
             }
             
             if (sections.length > 0 && navLinks.length > 0) {
-                changeNavActiveState(); // Initial call
-                window.addEventListener('scroll', changeNavActiveState); // Update on scroll
+                changeNavActiveState(); 
+                window.addEventListener('scroll', changeNavActiveState); 
             }
 
 
