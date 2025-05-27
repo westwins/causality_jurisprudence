@@ -7,12 +7,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Visualization & Content Choices:
-        - Report Sections (1-8): Goal: Inform/Organize. Viz: HTML text (headings, paragraphs, lists). Interaction: Scroll navigation. Justification: Standard for report presentation.
-        - Tables (1, 2, 3 from report): Goal: Compare/Inform. Viz: HTML tables. Interaction: Static, scrollable. Justification: Clear tabular data display.
+        - Report Sections (1-8): Goal: Inform/Organize. Viz: HTML text. Interaction: Scroll navigation. Justification: Standard.
+        - Tables (1, 2, 3): Goal: Compare/Inform. Viz: HTML tables. Interaction: Static. Justification: Clear data display.
         - Ladder of Causation: Goal: Explain Hierarchy. Viz: HTML/CSS stepped diagram. Interaction: Static. Justification: Visual hierarchy.
-        - Key Concepts (SCM, DAG, etc.): Goal: Define. Viz: Highlighted text, HTML/CSS tooltips for brief explanations. Interaction: Hover for tooltips. Justification: Quick info.
-        - Connecting Legal & Pearl's Concepts (Sec 4, Table 2): Goal: Explore/Relate. Viz: Interactive Explorer (JS dropdown updating HTML/CSS diagram & text). Interaction: User selection. Justification: Dynamic exploration of core report thesis.
-        - Library/Method: Vanilla JS for interactions, Tailwind for styling. HTML/CSS for conceptual diagrams. Chart.js not used due to lack of quantitative data for charting; focus is on conceptual visualization.
+        - Key Concepts (SCM, DAG, etc.): Goal: Define. Viz: Tooltips. Interaction: Hover. Justification: Quick info.
+        - Interactive Explorer: Goal: Explore/Relate. Viz: JS dropdown updating HTML/CSS. Interaction: User selection. Justification: Dynamic exploration.
+        - Infographic Section: Goal: Supplement/Visualize. Viz: Iframe embedding external HTML. Interaction: External page's own interactions. Justification: Integrate rich visual summary.
+        - Library/Method: Vanilla JS, Tailwind, HTML/CSS. Chart.js not used (no quantitative data).
     -->
     <style>
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; background-color: #F8F9FA; color: #212529; }
@@ -32,6 +33,8 @@
         h1, h2, h3 { color: #0056b3; }
         h2 { border-bottom: 2px solid #007BFF; padding-bottom: 0.5rem; }
         .section-intro { font-style: italic; color: #495057; margin-bottom: 1.5rem; padding: 1rem; background-color: #e9f7ff; border-radius: 0.25rem; border-left: 3px solid #17A2B8;}
+        .iframe-container { position: relative; overflow: hidden; width: 100%; padding-top: 75%; /* Aspect ratio 4:3, adjust as needed */ }
+        .iframe-container iframe { position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height: 100%; border: none; }
     </style>
 </head>
 <body class="bg-[#F8F9FA] text-[#212529]">
@@ -52,6 +55,7 @@
             <a href="#differentiators" class="nav-link px-2 py-1 text-xs sm:text-sm font-medium text-gray-700">차별점</a>
             <a href="#interactive-explorer-section" class="nav-link px-2 py-1 text-xs sm:text-sm font-medium text-gray-700">대화형 탐색기</a>
             <a href="#challenges" class="nav-link px-2 py-1 text-xs sm:text-sm font-medium text-gray-700">도전 과제</a>
+            <a href="#infographic" class="nav-link px-2 py-1 text-xs sm:text-sm font-medium text-gray-700">인포그래픽</a>
             <a href="#conclusion" class="nav-link px-2 py-1 text-xs sm:text-sm font-medium text-gray-700">결론</a>
         </div>
     </nav>
@@ -386,8 +390,17 @@
             <p>AI의 "블랙박스" 문제는 법률에서 특히 심각하며, 인과 모델링의 "검증 불가능한 가정"은 법적 논쟁의 새로운 장이 될 수 있습니다. 강력한 법률 CoT 개발은 법리학 및 법이론과의 깊은 관계를 필요로 합니다.</p>
         </section>
 
+        <section id="infographic" class="content-section bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold mb-4">9. 인포그래픽: 법률 인과론 시각화</h2>
+            <p class="section-intro">이 섹션에서는 보고서의 핵심 개념과 법률 추론 및 인과론 간의 관계를 시각적으로 요약한 인포그래픽을 제공합니다. 아래 프레임에서 외부 페이지를 로드하여 내용을 확인하실 수 있습니다.</p>
+            <div class="iframe-container mt-4 rounded-lg shadow-inner overflow-hidden">
+                <iframe src="infographic.html" title="법률 인과론 인포그래픽"></iframe>
+            </div>
+             <p class="mt-4 text-sm text-gray-600">위 인포그래픽은 <a href="https://westwins.github.io/causality_jurisprudence/infographic.html" target="_blank" rel="noopener noreferrer" class="text-[#007BFF] hover:underline">이곳</a>에서 직접 확인하실 수도 있습니다.</p>
+        </section>
+
         <section id="conclusion" class="content-section bg-white p-6 rounded-lg shadow-md">
-            <h2 class="text-2xl font-semibold mb-4">8. 결론: 법률 분야의 인과적이고 설명 가능한 AI를 향하여</h2>
+            <h2 class="text-2xl font-semibold mb-4">10. 결론: 법률 분야의 인과적이고 설명 가능한 AI를 향하여</h2>
             <p class="section-intro">본 보고서는 주디아 펄의 인과 추론 프레임워크가 법률 AI에서 더욱 강력하고 설명 가능하며 인과적으로 근거 있는 사고 연쇄(CoT)를 위한 기초로서 상당한 잠재력을 지니고 있음을 탐색했습니다. 법률 추론의 고유한 특징은 특화된 법률 CoT를 필요로 하며, 이의 개발은 여러 도전 과제를 안고 있지만, 법률 실무, 교육, 나아가 법리학적 이해까지 변화시킬 수 있는 중요한 연구 방향입니다.</p>
             <p class="mb-4">펄의 프레임워크는 사실적 인과관계와 반사실적 사고 모델링에 강력하지만, 법의 해석학적 및 규범적 차원 통합은 핵심 과제로 남아 있으며, 하이브리드 접근 방식이 필요할 가능성이 높습니다.</p>
             <div class="key-takeaway p-4 rounded-md my-4">
@@ -409,30 +422,32 @@
 
             function changeNavActiveState() {
                 let index = sections.length;
-                const scrollPosition = window.scrollY + window.innerHeight / 2; // Consider middle of viewport
+                const scrollPosition = window.scrollY + window.innerHeight / 2; 
 
                 while(--index >= 0 && scrollPosition < sections[index].offsetTop) {}
                 
                 navLinks.forEach((link) => link.classList.remove('active'));
-                if (index >= 0 && navLinks[index]) { // Check if navLinks[index] exists
-                     navLinks[index].classList.add('active');
-                } else if (navLinks.length > 0 && index < 0) { // If scrolled to top before first section
-                    // No active link or highlight the first one if desired
+                
+                // Find the corresponding nav link. This assumes navLinks order matches sections order.
+                // A more robust way would be to match href with section id.
+                const activeSectionId = sections[index] ? sections[index].id : null;
+                if (activeSectionId) {
+                    const activeNavLink = document.querySelector(`.nav-link[href="#${activeSectionId}"]`);
+                    if (activeNavLink) {
+                        activeNavLink.classList.add('active');
+                    }
                 }
             }
             
             if (sections.length > 0 && navLinks.length > 0) {
-                changeNavActiveState();
-                window.addEventListener('scroll', changeNavActiveState);
+                changeNavActiveState(); // Initial call
+                window.addEventListener('scroll', changeNavActiveState); // Update on scroll
             }
 
 
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
-                    // Keep default behavior for hash links, smooth scroll is CSS driven
-                    // Optionally, force active state on click for immediate feedback
-                    // navLinks.forEach(l => l.classList.remove('active'));
-                    // this.classList.add('active');
+                    // Smooth scroll is handled by CSS scroll-behavior: smooth
                 });
             });
 
